@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%; /* Black text on light backgrounds */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 7 86% 57%; /* #EF4136 */
+    --primary-foreground: 0 0% 100%; /* White text on primary color */
+    --secondary: 0 0% 96%; /* Light gray for backgrounds */
+    --secondary-foreground: 0 0% 0%; /* Black text on secondary backgrounds */
+    --muted: 0 0% 90%; /* Slightly darker gray for muted elements */
+    --muted-foreground: 0 0% 30%; /* Dark gray for muted text */
+    --accent: 7 86% 57%; /* #EF4136 */
+    --accent-foreground: 0 0% 100%; /* White text on accent color */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%; /* Lighter border for better contrast with black */
+    --input: 0 0% 85%;
+    --ring: 7 86% 57%; /* #EF4136 */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Black background */
+    --foreground: 0 0% 98%; /* White text */
+    --card: 0 0% 4%; /* Very dark gray for cards */
+    --card-foreground: 0 0% 98%; /* White text on cards */
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 7 86% 57%; /* #EF4136 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 0 0% 8%; /* Darker gray for secondary elements */
+    --secondary-foreground: 0 0% 98%; /* White text on secondary */
+    --muted: 0 0% 12%; /* Even darker gray for muted elements */
+    --muted-foreground: 0 0% 65%; /* Lighter gray for muted text */
+    --accent: 7 86% 57%; /* #EF4136 */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%; /* Darker border for dark mode */
+    --input: 0 0% 15%;
+    --ring: 7 86% 57%; /* #EF4136 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #EF4136 0%, #000000 100%);
+}
+
+.dark-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}
+
+.gear-pattern {
+  background-image: radial-gradient(circle at 25% 25%, hsla(7, 86%, 57%, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, hsla(0, 0%, 0%, 0.05) 0%, transparent 50%);
+}
+
+.chain-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    hsla(7, 86%, 57%, 0.03) 10px,
+    hsla(7, 86%, 57%, 0.03) 20px
+  );
+}
+
+.text-brand-gradient {
+  background: linear-gradient(135deg, #EF4136, #D43A2E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1); /* Adjusted for black theme */
+  border: 1px solid rgba(239, 65, 54, 0.1); /* Primary color border */
+}
+
+.dark .glass-effect {
+    background: rgba(10, 10, 10, 0.1);
+    border: 1px solid rgba(239, 65, 54, 0.2); /* Brighter primary border in dark */
+}
+
+
+.pulse-glow {
+  animation: pulse-glow-brand 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow-brand {
+  from {
+    box-shadow: 0 0 20px hsla(7, 86%, 57%, 0.4); /* #EF4136 glow */
+  }
+  to {
+    box-shadow: 0 0 30px hsla(7, 86%, 57%, 0.8); /* #EF4136 stronger glow */
+  }
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Ensure primary color is #EF4136 */
+.bg-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+.text-primary {
+  color: hsl(var(--primary));
+}
+.border-primary {
+  border-color: hsl(var(--primary));
+}
+.ring-primary {
+  --tw-ring-color: hsl(var(--primary));
+}
+
+/* Additional styling for better contrast with black */
+.bg-black {
+  background-color: #000000;
+}
+.text-on-black {
+  color: hsl(var(--primary-foreground)); /* Usually white */
+}
+.border-on-black {
+  border-color: hsl(var(--primary)); /* #EF4136 for accents */
+}
+.hover-text-primary:hover {
+  color: hsl(var(--primary));
+}
