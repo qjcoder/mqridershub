@@ -12,7 +12,7 @@ const ChainModels = () => {
         { name: "420-104-435", price: "PKR 1450" },
       ],
       imageAlt: "Motorcycle chain suitable for CD-70 models",
-      imageSrc: "src/images/CD70-420-104-480.png",
+      imageSrc: "public/images/CD70-420-104-480.png",
     },
     {
       category: "Chain CG-125",
@@ -22,7 +22,7 @@ const ChainModels = () => {
         { name: "428-100-560", price: "PKR 1700" },
       ],
       imageAlt: "Motorcycle chain suitable for CG-125 models",
-      imageSrc: "src/images/CD70-420-104-480.png",
+      imageSrc: "public/images/CD70-420-104-480.png",
     },
     {
       category: "Chain (General Purpose)",
@@ -32,7 +32,7 @@ const ChainModels = () => {
         { name: "428-108-580", price: "PKR ---" },
       ],
       imageAlt: "General purpose motorcycle chain 428-108 size, black finish",
-      imageSrc: "src/images/CD70-420-104-480.png",
+      imageSrc: "public/images/CD70-420-104-480.png",
     },
   ];
 

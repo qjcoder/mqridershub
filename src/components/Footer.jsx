@@ -12,7 +12,7 @@ import { useToast } from "@/components/ui/use-toast";
 
 const Footer = () => {
   const { toast } = useToast();
-  const logoUrl = "src/images/logo_black.png"; // Assuming public folder usage
+  const logoUrl = "public/images/logo_black.png"; // Assuming public folder usage
 
   const handleLinkClick = (linkName, url = "#") => {
     if (url === "#") {

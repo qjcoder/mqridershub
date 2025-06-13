@@ -17,7 +17,7 @@ const About = () => {
         "We use only the finest hardened steel and aerospace-grade aluminum for maximum durability and performance.",
       imageAlt:
         "Close-up of premium motorcycle sprocket showing precision machining and quality materials, with red accents",
-      imageSrc: "src/images/closed up.png",
+      imageSrc: "public/images/closed up.png",
       details: [
         "Hardened steel construction for longevity",
         "Corrosion-resistant coating",
@@ -30,7 +30,7 @@ const About = () => {
         "Every sprocket is CNC-machined to exact specifications, ensuring perfect fit and optimal power transfer.",
       imageAlt:
         "CNC machine precisely crafting a motorcycle sprocket component with red laser guide lines",
-      imageSrc: "src/images/laser guidlines.png",
+      imageSrc: "public/images/laser-guidlines.png",
       details: [
         'CNC-machined to ±0.001" tolerance',
         "Computer-aided design optimization",
@@ -43,7 +43,7 @@ const About = () => {
         "Our extensive catalog covers many popular local and international motorcycle brands and models.",
       imageAlt:
         "Collection of various sprockets suitable for different motorcycle brands like Honda, Yamaha, and local Pakistani brands, with red highlights",
-      imageSrc: "src/images/collection.png",
+      imageSrc: "public/images/collection.png",
       details: [
         "Honda, Yamaha, Road Prince, Ravi",
         "Unique, Super Star, United, ZXMCO",
