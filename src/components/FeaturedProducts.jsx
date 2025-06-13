@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
       reviews: 101,
       imageAlt:
         "Motorcycle sprocket kit for CD-70 with front and rear sprockets and chain",
-      imageSrc: "public/images/CD70-420-104-480.png",
+      imageSrc: "images/CD70-420-104-480.png",
       badge: "Best Seller",
       features: ["Hardened Steel", "420-104-480 Chain", "CD-70 Fit"],
     },
@@ -36,7 +36,7 @@ const FeaturedProducts = () => {
       reviews: 130,
       imageAlt:
         "Motorcycle sprocket kit for CD-70 with front and rear sprockets and chain",
-      imageSrc: "public/images/CD70-420-104-480.png",
+      imageSrc: "images/CD70-420-104-480.png",
       badge: "Attractive Price",
       features: ["Hardened Steel", "420-104-460 Chain", "CD-70 Fit"],
     },
@@ -49,7 +49,7 @@ const FeaturedProducts = () => {
       reviews: 180,
       imageAlt:
         "Motorcycle sprocket kit for CD-70 with front and rear sprockets and chain",
-      imageSrc: "public/images/CD70-420-104-480.png",
+      imageSrc: "images/CD70-420-104-480.png",
       badge: "Most Affordable",
       features: ["Hardened Steel", "420-104-435 Chain", "CD-70 Fit"],
     },
@@ -62,7 +62,7 @@ const FeaturedProducts = () => {
       reviews: 111,
       imageAlt:
         "Motorcycle sprocket kit for CG-125 with front and rear sprockets and chain",
-      imageSrc: "public/images/CD70-420-104-480.png",
+      imageSrc: "images/CD70-420-104-480.png",
       badge: "More Popular",
       features: ["Hardened Steel", "428-100-600 Chain", "CG-125 Fit"],
     },
