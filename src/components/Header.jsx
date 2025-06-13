@@ -8,7 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { toast } = useToast();
-  const logoUrl = "public/images/logo.png";
+  const logoUrl = "images/logo.png";
 
   useEffect(() => {
     const handleScroll = () => {
