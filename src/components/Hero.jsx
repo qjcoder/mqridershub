@@ -31,13 +31,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* Optional decorative patterns */}
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-2 sm:pt-0">
       <div className="absolute inset-0 gear-pattern opacity-20 z-0"></div>
       <div className="absolute inset-0 chain-pattern opacity-10 z-0"></div>
 
-      {/* ✅ FIXED: Properly positioned hero image */}
-      {/* ✅ Hero background image */}
       <div className="absolute right-0 top-0 h-full w-1/2 opacity-10 z-10 overflow-hidden">
         <img
           alt="Aggressive sport motorcycle silhouette with dramatic red lighting highlighting the sprocket and engine"
@@ -46,18 +43,16 @@ const Hero = () => {
         />
       </div>
 
-      {/* Main content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
           <motion.div
-            className="text-primary-foreground space-y-8"
+            className="text-primary-foreground space-y-4 sm:space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
             <motion.div
-              className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2"
+              className="inline-flex items-center space-x-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-3 py-1 sm:px-4 sm:py-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -68,13 +63,12 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold leading-tight">
                 <span className="text-primary">MQ Riders HUB</span>
                 <br />
                 <span className="text-primary-foreground">
@@ -85,9 +79,8 @@ const Hero = () => {
               </h1>
             </motion.div>
 
-            {/* Subtext */}
             <motion.p
-              className="text-xl text-gray-300 leading-relaxed max-w-lg"
+              className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -96,9 +89,8 @@ const Hero = () => {
               durability. Power up your ride with MQ Riders Hub.
             </motion.p>
 
-            {/* Features */}
             <motion.div
-              className="flex flex-wrap gap-6"
+              className="flex flex-wrap gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
@@ -110,12 +102,13 @@ const Hero = () => {
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <feature.icon className="w-5 h-5 text-primary" />
-                  <span className="text-gray-300">{feature.text}</span>
+                  <span className="text-sm sm:text-base text-gray-300">
+                    {feature.text}
+                  </span>
                 </div>
               ))}
             </motion.div>
 
-            {/* Buttons */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -125,7 +118,7 @@ const Hero = () => {
               <Button
                 onClick={handleShopNow}
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 pulse-glow group"
+                className="text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 pulse-glow group"
               >
                 Shop Sprockets
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -134,15 +127,14 @@ const Hero = () => {
                 onClick={handleLearnMore}
                 variant="outline"
                 size="lg"
-                className="border-primary/50 text-primary-foreground hover:bg-primary/20 hover:text-primary-foreground backdrop-blur-sm"
+                className="text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 border-primary/50 text-primary-foreground hover:bg-primary/20 hover:text-primary-foreground backdrop-blur-sm"
               >
                 Discover More
               </Button>
             </motion.div>
 
-            {/* Stats */}
             <motion.div
-              className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20"
+              className="grid grid-cols-3 gap-6 sm:gap-8 pt-6 sm:pt-8 border-t border-primary-foreground/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
@@ -153,17 +145,17 @@ const Hero = () => {
                 { number: "100%", label: "Quality Focus" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-primary">
+                  <div className="text-lg sm:text-2xl font-bold text-primary">
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-gray-400">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
-          {/* Hero side image with badges */}
-          {/* Hero side image with badges */}
           <motion.div
             className="relative hidden lg:block z-10"
             initial={{ opacity: 0, x: 50 }}
@@ -171,7 +163,6 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative w-full max-w-md mx-auto">
-              {/* Main image */}
               <div className="relative z-10">
                 <img
                   alt="High-performance motorcycle sprocket"
@@ -180,7 +171,6 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Rotating circular badge */}
               <motion.div
                 className="absolute -top-6 -right-6 w-24 h-24 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-xl z-20"
                 animate={{ rotate: 360 }}
@@ -189,7 +179,6 @@ const Hero = () => {
                 <span className="font-bold text-sm">MQ</span>
               </motion.div>
 
-              {/* Rating badge */}
               <motion.div
                 className="absolute -bottom-6 -left-6 bg-black/90 backdrop-blur-md rounded-xl p-4 shadow-xl border border-white/10 z-20"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -212,7 +201,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

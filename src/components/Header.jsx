@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Menu, X, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -53,33 +53,31 @@ const Header = () => {
 
   return (
     <>
+      {/* Top Contact Bar */}
       <div className="bg-black text-on-black py-2 px-4">
-        <div className="container mx-auto flex flex-col sm:flex-row flex-wrap justify-between items-center text-sm gap-y-2">
-          <div className="flex items-center space-x-4 md:space-x-6">
+        <div className="container mx-auto flex justify-between items-center text-xs sm:text-sm">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
             <a
               href="https://wa.me/923018988978"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <MessageCircle className="w-4 h-4 text-primary" />
-              <span>0301-8988978</span>
+              <span className="text-white">0301-8988978</span>
             </a>
             <a
               href="mailto:mqridershubpvtlt@gmail.com"
-              className="flex items-center space-x-2 hover:text-primary transition-colors"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
             >
               <Mail className="w-4 h-4 text-primary" />
-              <span>mqridershubpvtlt@gmail.com</span>
+              <span className="text-white">mqridershubpvtlt@gmail.com</span>
             </a>
-          </div>
-          <div className="flex items-center space-x-2">
-            <MapPin className="w-4 h-4 text-primary" />
-            <span>Lahore Industrial Zone</span>
           </div>
         </div>
       </div>
 
+      {/* Sticky Navigation */}
       <motion.header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled
@@ -90,8 +88,9 @@ const Header = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-2 sm:py-4">
           <div className="flex items-center justify-between">
+            {/* Logo */}
             <motion.div
               className="flex items-center space-x-3 cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -100,10 +99,11 @@ const Header = () => {
               <img
                 src={logoUrl}
                 alt="MQ Riders Hub Logo"
-                className="max-w-[160px] w-full object-contain"
+                className="w-28 sm:w-40 object-contain"
               />
             </motion.div>
 
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item) => (
                 <button
@@ -116,13 +116,12 @@ const Header = () => {
                   }`}
                 >
                   {item.label}
-                  <span
-                    className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full`}
-                  ></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </button>
               ))}
             </nav>
 
+            {/* Quote Button (Desktop) */}
             <div className="hidden md:flex items-center space-x-4">
               <Button
                 onClick={handleContactClick}
@@ -132,6 +131,7 @@ const Header = () => {
               </Button>
             </div>
 
+            {/* Mobile Menu Toggle */}
             <button
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -154,6 +154,7 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
             className="md:hidden bg-background border-t border-border shadow-lg"

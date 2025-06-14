@@ -9,7 +9,7 @@ const FeaturedProducts = () => {
 
   const handleProductAction = (action) => {
     toast({
-      title: `🚧 ${action} feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀`,
+      title: `\uD83D\uDEA7 ${action} feature isn't implemented yet\u2014but don't worry! You can request it in your next prompt! \uD83D\uDE80`,
     });
   };
 
@@ -69,29 +69,29 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-secondary">
+    <section className="py-12 sm:py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 text-foreground">
             <span className="text-brand-gradient">Featured</span> Products
           </h2>
-          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover our most popular sprocket kits, engineered for performance
             and built to last.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
-              className="bg-card rounded-2xl shadow-lg overflow-hidden hover-lift group border border-border"
+              className="bg-card rounded-xl shadow-md overflow-hidden hover-lift group border border-border"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -104,32 +104,32 @@ const FeaturedProducts = () => {
                   className="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-500"
                 />
 
-                <div className="absolute top-4 left-4">
-                  <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
+                <div className="absolute top-3 left-3">
+                  <span className="bg-primary text-primary-foreground px-2 py-0.5 rounded-full text-[10px] sm:text-sm font-medium">
                     {product.badge}
                   </span>
                 </div>
 
-                <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <button
                     onClick={() => handleProductAction("Wishlist")}
                     aria-label="Add to Wishlist"
-                    className="w-9 h-9 sm:w-10 sm:h-10 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-card transition-colors border border-border"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-card transition-colors border border-border"
                   >
-                    <Heart className="w-4 h-4 text-muted-foreground" />
+                    <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-muted-foreground" />
                   </button>
                   <button
                     onClick={() => handleProductAction("Quick View")}
                     aria-label="Quick View"
-                    className="w-9 h-9 sm:w-10 sm:h-10 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-card transition-colors border border-border"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-card/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-card transition-colors border border-border"
                   >
-                    <Eye className="w-4 h-4 text-muted-foreground" />
+                    <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-muted-foreground" />
                   </button>
                 </div>
 
                 {product.originalPrice > product.price && (
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-destructive text-destructive-foreground px-2 py-1 rounded text-xs sm:text-sm font-medium">
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-destructive text-destructive-foreground px-2 py-0.5 rounded text-[10px] sm:text-sm font-medium">
                       -
                       {Math.round(
                         ((product.originalPrice - product.price) /
@@ -142,8 +142,8 @@ const FeaturedProducts = () => {
                 )}
               </div>
 
-              <div className="p-4 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+              <div className="p-3 sm:p-6">
+                <h3 className="text-sm sm:text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
 
@@ -151,19 +151,19 @@ const FeaturedProducts = () => {
                   {product.features.map((feature, idx) => (
                     <span
                       key={idx}
-                      className="text-[10px] sm:text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded"
+                      className="text-[10px] sm:text-xs bg-secondary text-secondary-foreground px-1.5 py-0.5 rounded"
                     >
                       {feature}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center space-x-2 mb-3">
+                <div className="flex items-center space-x-1 sm:space-x-2 mb-3">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-4 h-4 ${
+                        className={`w-3 h-3 sm:w-4 sm:h-4 ${
                           i < Math.floor(product.rating)
                             ? "fill-current"
                             : "text-muted-foreground/50"
@@ -171,17 +171,17 @@ const FeaturedProducts = () => {
                       />
                     ))}
                   </div>
-                  <span className="text-xs sm:text-sm text-muted-foreground">
+                  <span className="text-[10px] sm:text-sm text-muted-foreground">
                     {product.rating} ({product.reviews} reviews)
                   </span>
                 </div>
 
                 <div className="flex items-baseline space-x-2 mb-4">
-                  <span className="text-xl sm:text-2xl font-bold text-card-foreground">
+                  <span className="text-lg sm:text-2xl font-bold text-card-foreground">
                     PKR {product.price.toLocaleString()}
                   </span>
                   {product.originalPrice > product.price && (
-                    <span className="text-sm sm:text-lg text-muted-foreground line-through">
+                    <span className="text-xs sm:text-lg text-muted-foreground line-through">
                       PKR {product.originalPrice.toLocaleString()}
                     </span>
                   )}
@@ -189,9 +189,9 @@ const FeaturedProducts = () => {
 
                 <Button
                   onClick={() => handleProductAction("Add to Cart")}
-                  className="w-full brand-gradient text-primary-foreground hover:opacity-90 transition-opacity duration-200 group"
+                  className="w-full text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2 brand-gradient text-primary-foreground hover:opacity-90 transition-opacity duration-200 group"
                 >
-                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  <ShoppingCart className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Add to Cart
                 </Button>
               </div>
@@ -200,7 +200,7 @@ const FeaturedProducts = () => {
         </div>
 
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -210,7 +210,7 @@ const FeaturedProducts = () => {
             onClick={() => handleProductAction("View All Products")}
             variant="outline"
             size="lg"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base"
           >
             View All Products
           </Button>
