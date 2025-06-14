@@ -56,16 +56,16 @@ const Services = () => {
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-foreground">
-            Our <span className="text-brand-gradient">Services</span>
+          <h2 className="text-2xl sm:text-4xl font-bold text-center text-foreground mb-4">
+            Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed text-center">
             Beyond just selling parts, we provide comprehensive services to
             ensure your motorcycle performs at its best with complete peace of
             mind.

@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-2 sm:pt-0">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-black pt-0 sm:pt-0">
       <div className="absolute inset-0 gear-pattern opacity-20 z-0"></div>
       <div className="absolute inset-0 chain-pattern opacity-10 z-0"></div>
 
@@ -43,7 +43,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 mt-[-308px] sm:mt-0">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
           <motion.div
             className="text-primary-foreground space-y-4 sm:space-y-8"
@@ -125,9 +125,8 @@ const Hero = () => {
               </Button>
               <Button
                 onClick={handleLearnMore}
-                variant="outline"
                 size="lg"
-                className="text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 border-primary/50 text-primary-foreground hover:bg-primary/20 hover:text-primary-foreground backdrop-blur-sm"
+                className="text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3 bg-primary/20 text-primary-foreground border border-primary hover:bg-primary/30 transition"
               >
                 Discover More
               </Button>

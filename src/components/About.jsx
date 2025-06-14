@@ -166,16 +166,16 @@ const About = () => {
 
         {/* Mission Statement */}
         <motion.div
-          className="mt-20 text-center bg-secondary rounded-3xl p-6 sm:p-12 border border-border"
+          className="mt-16 sm:mt-20 text-center bg-secondary rounded-2xl px-4 sm:px-10 py-6 sm:py-10 border border-border shadow-md"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 sm:mb-6">
-            Our Mission
-          </h3>
-          <p className="text-base sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <h2 className="text-2xl sm:text-4xl font-bold text-center text-foreground mb-4">
+            Our <span className="text-primary">Mission</span>
+          </h2>
+          <p className="text-center text-sm sm:text-base text-muted-foreground leading-relaxed sm:leading-loose max-w-5xl mx-auto">
             At MQ Riders Hub, we're committed to providing motorcycle
             enthusiasts with the highest quality sprocket kits and components.
             Every product we sell is backed by our passion for riding and our
